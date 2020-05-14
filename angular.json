@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mon-projet-angular": {
+    "mon-projet": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mon-projet-angular",
+            "outputPath": "dist/mon-projet",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,9 +50,13 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,18 +92,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mon-projet-angular:build"
+            "browserTarget": "mon-projet:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mon-projet-angular:build:production"
+              "browserTarget": "mon-projet:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mon-projet-angular:build"
+            "browserTarget": "mon-projet:build"
           }
         },
         "test": {
@@ -114,6 +118,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -136,15 +141,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mon-projet-angular:serve"
+            "devServerTarget": "mon-projet:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mon-projet-angular:serve:production"
+              "devServerTarget": "mon-projet:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "mon-projet-angular"
+    }
+  },
+  "defaultProject": "mon-projet",
+  "cli": {
+    "analytics": "2a2b167a-016d-43ea-a03b-3dfeae5b44aa"
+  }
 }
