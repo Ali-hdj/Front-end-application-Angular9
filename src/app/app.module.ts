@@ -10,6 +10,12 @@ import { RechercherComponent } from './accueil/rechercher/rechercher.component';
 import { NavigationComponent } from './accueil/navigation/navigation.component';
 import { FormsModule } from '@angular/forms';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { PostComponent } from './accueil/post/post.component';
+import { InscriptionComponent } from './accueil/inscription/inscription.component';
+import { ToutlespublicationsComponent } from './toutlespublications/toutlespublications.component';
+import{connexionService} from "./services/service.connexion";
+import{utilisateurService} from "./services/service.utilisateur";
+
 
 @NgModule({
   declarations: [
@@ -18,7 +24,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     SeConnecterComponent,
     InscriptionFormComponent,
     RechercherComponent,
-    NavigationComponent
+    NavigationComponent,
+    PostComponent,
+    InscriptionComponent,
+    ToutlespublicationsComponent
    
   ],
   imports: [
@@ -28,7 +37,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatProgressBarModule
    
   ],
-  providers: [],
+  providers: [
+    connexionService,
+    utilisateurService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
