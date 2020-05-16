@@ -18,6 +18,7 @@ import{utilisateurService} from "./services/service.utilisateur";
 import { AccueilConnexionComponent } from './accueil-connexion/accueil-connexion.component';
 import { NavigationConnexionComponent } from './accueil-connexion/navigation-connexion/navigation-connexion.component';
 import { NavigationMenuGaucheComponent } from './accueil-connexion/navigation-menu-gauche/navigation-menu-gauche.component';
+import { PublicationsComponent } from './publications/publications.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NavigationMenuGaucheComponent } from './accueil-connexion/navigation-me
     ToutlespublicationsComponent,
     AccueilConnexionComponent,
     NavigationConnexionComponent,
-    NavigationMenuGaucheComponent
+    NavigationMenuGaucheComponent,
+    PublicationsComponent
    
   ],
   imports: [
