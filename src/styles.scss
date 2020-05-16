@@ -1,7 +1,11 @@
 body
 {
     font-family: 'ABeeZee';  /* Police0*/
-    background-color: red($color: #000000);
+	background-color: red($color: #000000);
+	width: 100%;
+}
+html{
+	width: 100%;
 }
 .btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited,.btn-success:focus {
 	background-color:deeppink !important;
@@ -35,16 +39,8 @@ body
 	width: 100%;
 }
 
-/* cest par ce que on vous aide a bricoler */
 
-.ecritureMilieu
-{
-	position: absolute;
-	top: 200px;
-	left: 5%; 
-	width: 700px;
-	height: 500px;
-}
+
 
 .police1
 {
@@ -100,6 +96,7 @@ box-shadow: 0 0 10px #719ECE;
 		.ecritureMilieu
 		{
 			width: 500px;
+			display: none;
 		}
 
 		}
