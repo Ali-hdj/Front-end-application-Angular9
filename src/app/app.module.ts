@@ -15,6 +15,9 @@ import { InscriptionComponent } from './accueil/inscription/inscription.componen
 import { ToutlespublicationsComponent } from './toutlespublications/toutlespublications.component';
 import{connexionService} from "./services/service.connexion";
 import{utilisateurService} from "./services/service.utilisateur";
+import { AccueilConnexionComponent } from './accueil-connexion/accueil-connexion.component';
+import { NavigationConnexionComponent } from './accueil-connexion/navigation-connexion/navigation-connexion.component';
+import { NavigationMenuGaucheComponent } from './accueil-connexion/navigation-menu-gauche/navigation-menu-gauche.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import{utilisateurService} from "./services/service.utilisateur";
     NavigationComponent,
     PostComponent,
     InscriptionComponent,
-    ToutlespublicationsComponent
+    ToutlespublicationsComponent,
+    AccueilConnexionComponent,
+    NavigationConnexionComponent,
+    NavigationMenuGaucheComponent
    
   ],
   imports: [
