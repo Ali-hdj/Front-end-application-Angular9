@@ -19,6 +19,13 @@ import { AccueilConnexionComponent } from './accueil-connexion/accueil-connexion
 import { NavigationConnexionComponent } from './accueil-connexion/navigation-connexion/navigation-connexion.component';
 import { NavigationMenuGaucheComponent } from './accueil-connexion/navigation-menu-gauche/navigation-menu-gauche.component';
 import { PublicationsComponent } from './accueil-connexion/publications/publications.component';
+import { ProfileComponent } from './accueil-connexion/profile/profile.component';
+import { MessagesComponent } from './accueil-connexion/messages/messages.component';
+import { RendezVousComponent } from './accueil-connexion/rendez-vous/rendez-vous.component';
+import { AnnoncesComponent } from './accueil-connexion/annonces/annonces.component';
+import { VoisinsComponent } from './voisins/voisins.component';
+import { ContratsComponent } from './accueil-connexion/contrats/contrats.component';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
@@ -35,7 +42,14 @@ import { PublicationsComponent } from './accueil-connexion/publications/publicat
     AccueilConnexionComponent,
     NavigationConnexionComponent,
     NavigationMenuGaucheComponent,
-    PublicationsComponent
+    PublicationsComponent,
+    ProfileComponent,
+    MessagesComponent,
+    RendezVousComponent,
+    AnnoncesComponent,
+    VoisinsComponent,
+    ContratsComponent,
+    MapComponent
    
   ],
   imports: [
