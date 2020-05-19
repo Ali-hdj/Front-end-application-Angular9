@@ -1,0 +1,57 @@
+
+.mainDiv
+{
+background-size: cover; 
+	 width: 100%;
+     height:100vh;
+    
+}
+.mainDiv2
+{
+    background-color: rgb(237,237,237);
+    width: 100%;
+  
+    margin: 0px;
+}
+.buttomDiv
+{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(117, 117, 117);
+}
+
+.posts
+{
+position: relative;
+left :55%;
+margin-bottom: 50px;
+margin-top: 50px;
+}
+/* cest par ce que on vous aide a bricoler */
+.ecritureMilieu
+{
+	position: absolute;
+	top: 100px;
+	left: 300px; 
+	width: 700px;
+	height: 500px;
+}
+
+.bricoleur
+{
+ width: 750px;
+ display: block;
+}
+
+
+@media only screen and (max-width: 900px) 
+{
+    .bricoleur{ 
+       width: 0px;
+        }
+}
+
+@media only screen and (max-width: 780px) 
+{
+    .bricoleur{  width: 0px;}
+}

@@ -1,0 +1,39 @@
+
+<app-navigation [navigation]="navig"></app-navigation>
+<div class="mainDiv" id="main" [ngStyle]="{background:getImage()}" >
+
+
+    <div  class="ecritureMilieu">
+   <!--<p class="police1" id="text" style="color: deeppink;" >
+
+  c'est par ce que nous <br><br><br>
+  On vous aide a bricoler !</p>-->
+    
+     </div>
+<app-inscription-form></app-inscription-form>
+<app-rechercher></app-rechercher>
+
+<app-se-connecter *ngIf="connexion" [navigation]="navig"></app-se-connecter>
+<app-inscription *ngIf="inscription" [navigation]="navig" ></app-inscription>
+</div>
+<div style="height: 20px; width: 100%; background-color: deeppink; "></div>
+<div class="mainDiv2">
+
+<p class="police1" id="text" style="color: deeppink;position: relative; ">
+<br><br>
+   retrouvez un bricoleur ou des outiles de bricolage </p>
+<div style="display:flex; margin-top: 50px;">
+<img src="/../assets/images/bricoleur.png" class="d-inline bricoleur">
+<div class="posts" class="d-inline">
+    <app-post *ngFor="let p of posts" [post]="p">
+    </app-post>
+</div>
+</div>
+</div>
+<div class="buttomDiv" style="margin-top:0px;">
+   <br>
+    <div style="width: 200px;height: 200px; margin: 20px;position: relative;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21192.37658707279!2d-4.52515096276786!3d48.39803914096401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4816bbf7926349e9%3A0xfdabf9ecd3f1a0c9!2sUniversit%C3%A9%20de%20Bretagne%20Occidentale%20-%20UBO!5e0!3m2!1sfr!2sfr!4v1589548205665!5m2!1sfr!2sfr" width="270" height="240" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+    </iframe>
+</div>
+</div>

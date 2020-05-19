@@ -1,0 +1,30 @@
+
+<div [class]="affichages[0]?'mainDivConnexion':'mainDivconnexion2'" >
+
+
+<div class="menuGauche" >
+    <app-navigation-menu-gauche [affichages]="affichages"></app-navigation-menu-gauche>
+</div>
+
+<app-publications *ngIf="affichages[0]" style="width: 45%;"></app-publications>
+<app-profile *ngIf="affichages[1]" style="width: 45%;"></app-profile>
+<app-messages *ngIf="affichages[2]" style="width: 45%;"></app-messages>
+<app-rendez-vous *ngIf="affichages[3]" style="width: 45%;"></app-rendez-vous>
+<app-annonces *ngIf="affichages[4]" style="width: 45%;"></app-annonces>
+<app-voisins *ngIf="affichages[5]" style="width: 45%;"></app-voisins>
+<app-contrats *ngIf="affichages[6]" style="width: 45%;"></app-contrats>
+
+<div [class]="affichages[0]?'divRight':'divRight2'">
+ 
+    <div >
+        <app-map *ngIf="affichages[0]">
+
+        </app-map>
+    </div>
+</div>
+
+
+</div>
+
+<app-navigation-connexion></app-navigation-connexion>
+

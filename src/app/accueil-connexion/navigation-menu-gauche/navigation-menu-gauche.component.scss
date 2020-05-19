@@ -1,0 +1,28 @@
+.divmenuegauche
+{
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 25px;
+    width: 17%;
+    height: 100vh;
+    border-radius: 12px;
+    background-color: rgb(231, 231, 231);
+    position: fixed;
+    margin: 0px;
+
+}
+
+.icone
+{
+ position: relative;
+ right :0%;
+}
+
+.divIcon
+{
+    width: 100%;
+     position :relative ;
+     display: flex; 
+     justify-content: baseline;
+}

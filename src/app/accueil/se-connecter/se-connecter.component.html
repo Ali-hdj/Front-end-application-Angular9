@@ -1,0 +1,39 @@
+<div style="width: 100%;height:100vh; background-color: rgba(0,0,0,0.9); position: absolute;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <div class="modal-body">
+          <h4>Connexion</h4>
+          <button type="button" class="close" aria-label="Close" (click)="navigation.onConnexionClose()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+         <!-- <mat-progress-bar mode="determinate" value="40" *ngIf="wait"></mat-progress-bar> 
+          <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>-->
+        </div>
+      <div style="margin: 50px;">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="form-group">
+              <label for="Email8"><strong>Email address</strong></label>
+              <input type="email" class="form-control" id="Emai18" name="email" ngModel aria-describedby="emailHelp" required email>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="Password8"><strong>Mot de passe :</strong></label>
+              <input type="password" class="form-control" id="Password8" name="motdepasse" ngModel required>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" name="save" id="exampleCheck1" >
+              <label class="form-check-label" for="exampleCheck1">Enregistrer le mot de passe </label>
+            </div>
+            <button type="submit" style="position: relative; left:20%;width: 60%;"  class="btn btn-success" [disabled]="f.invalid">Connexion</button>
+
+          </form>
+          <br>
+         
+        </div>
+       
+      </div>
+      <img src="/../../assets/images/loding.gif" *ngIf="isWait()" style="position: relative;left: 45%;bottom: 50px;" >
+    </div>
+    
+</div>

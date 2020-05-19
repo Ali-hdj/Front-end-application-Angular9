@@ -1,0 +1,135 @@
+/* FICHIER STYLES CSS */
+
+body
+{
+	font-family: 'ABeeZee';  /* Police0*/
+}
+
+/* La barre de navigation en haut */
+.navigationBar
+{
+	background-color: rgba(255,255,255,1);
+	position: sticky;
+	width: 100%;
+}
+
+.mainDiv
+{
+	background-image: url('../images/diy0.jpg');  
+	background-size: cover; 
+	 width: 100%;
+	 height:100vh;
+}
+/* cest par ce que on vous aide a bricoler */
+
+.ecritureMilieu
+{
+	position: absolute;
+	top: 200px;
+	left: 5%; 
+	width: 700px;
+}
+
+.police1
+{
+	font-family: 'Anton';
+	font-size: 3em ;
+	color:white;
+}
+
+/*ceci pour la boite de inscription */
+.inscription
+{
+	width: 400px; 
+	height:350px; 
+	position: absolute;
+	top: 15% ;
+	right: 5% ;
+	background-color :rgba(255,255,255,0.9); 
+	border-radius: 12px; 
+}
+.inscriptionDiv1
+{
+² margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 20px; 
+  color:black; 
+  font-family: 'ABeeZee';
+}
+.inscriptionDivButton
+{
+	display: block;
+  margin-left: auto;
+  margin-right: auto; width: 100%
+}
+
+.inscriptionButton{
+	width: 80% ;
+	position: relative;
+	left:10%;
+}
+/*******************************fin inscription **************/
+
+.chercher
+{
+	width: 90%;
+	 height:20%; 
+	 position: absolute;
+	 top: 450px ;
+	 left: 5% ;
+	 background-color :rgba(255,255,255,0.9);
+	 border-radius: 12px; 
+}
+
+.mobileForm
+{
+	display: none;
+	width: 300px;
+	position: relative;
+	left: 50px;
+	top: 50px;
+
+}
+
+/*******************************************************/
+
+@media only screen and (max-width: 900px) {
+		.inscription{ 
+				margin: 5px;
+				width: 300px;
+			}
+		.ecritureMilieu
+		{
+			width: 500px;
+		}
+
+		}
+@media only screen and (max-width: 768px) {
+	.inscription{ display: none; 
+				margin: 5px;
+			}
+	.ecritureMilieu
+	{
+		display: none;
+	}
+
+	.mobileForm
+	{
+		display: block;
+	}
+	.chercher
+	{
+		display: none;
+	}
+	.mainDiv
+	{
+		background-image: url('../images/15.jpeg');  
+	}
+}
+
+@media only screen and (max-height: 500px) {
+	.inscription{ display: none; 
+				margin: 5px;
+			}
+		}

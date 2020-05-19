@@ -1,0 +1,10 @@
+<div class="publicationDiv">
+    <div *ngIf="this.connexion.isReady(6)">
+    <app-un-contrat *ngFor="let c of getContrats()" [contrat]="c">
+
+    </app-un-contrat>
+    </div>
+    </div>
+    <div *ngIf="!this.connexion.isReady(6)" style="position: absolute;top: 200px;left:50%;">
+        <img src="/../../../assets/images/loding.gif">
+    </div>

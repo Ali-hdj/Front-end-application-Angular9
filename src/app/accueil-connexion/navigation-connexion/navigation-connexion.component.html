@@ -1,0 +1,27 @@
+<div style="position: fixed;top: 0px; width: 100%; background-color: white;">
+<nav class="navbar navbar-light navbar-expand-lg" id="navigation" style="background-color: white;width: 100%;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <img src="/../../assets/images/logo.jpg" style="margin-right: 20px;">
+      <a class="navbar-brand" routerLink="../">Accueil</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Notice<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Rechercher un outil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="../tout-les-publications" routerLinkActive="Active">voir toutes les demandes </a>
+        </li>
+      </ul>
+      <form class="form-inline my-1 my-lg-0" *ngIf="isConnected()">
+      
+   
+    <button class="btn btn-outline-success my-0.5 my-sm-0" (click)="onDeconnexion()">Deconexion</button>
+  </form>
+    </div>
+  </nav>
+</div>

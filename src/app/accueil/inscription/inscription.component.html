@@ -1,0 +1,60 @@
+<div style="width: 100%;height:100vh; background-color:rgba(68, 68, 68, 0.8);// rgba(0,0,0,0.9); position: absolute;">
+    <div class="modal-dialog modal-lg" style="width: 80%;">
+      <div class="modal-content">
+      
+        <div class="modal-body">
+        <div>
+          <h4><strong>Inscription </strong> </h4>
+        </div>
+          <button type="button" class="close" aria-label="Close" (click)="navigation.onInscriptionClose()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+         <!-- <mat-progress-bar mode="determinate" value="40" *ngIf="wait"></mat-progress-bar> 
+          <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>-->
+        </div>
+      <div style="margin: 50px;">
+        <form (ngSubmit)="onSubmit(rf)" #rf="ngForm" >
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmailinscription2" name="email" ngModel required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">mot de passe</label>
+                <input type="password" class="form-control" id="inputPassword4" name="motdepasse" ngModel required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"name="adresse" ngModel required>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Numero téléphone (*)</label>
+              <input type="tel" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="telephone"  [pattern]="'[0][0-9]{9}'" ngModel required>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Vile (*)</label>
+                <input type="text" class="form-control" id="inputCity" name="ville" ngModel required>
+              </div>
+            
+              <div class="form-group col-md-2">
+                <label for="inputZip">code postal</label>
+                <input type="number" class="form-control" id="inputZip" name="codepostal" ngModel required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" name="accepter" ngModel required>
+                <label class="form-check-label" for="gridCheck">
+                 J'accepte les conditions d'utilisation
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="rf.invalid">S'inscrire</button>
+          </form>
+        
+        </div>
+      </div>
+    </div>
+</div>
