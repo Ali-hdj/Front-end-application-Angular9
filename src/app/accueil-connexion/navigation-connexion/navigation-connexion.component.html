@@ -17,8 +17,9 @@
           <a class="nav-link" routerLink="../tout-les-publications" routerLinkActive="Active">voir toutes les demandes </a>
         </li>
       </ul>
+      <img src="/../../assets/images/loding.gif" *ngIf="isWaiting()" style="margin: 50px; margin-top: 0px;margin-bottom: 0px;">
       <form class="form-inline my-1 my-lg-0" *ngIf="isConnected()">
-      
+     
    
     <button class="btn btn-outline-success my-0.5 my-sm-0" (click)="onDeconnexion()">Deconexion</button>
   </form>

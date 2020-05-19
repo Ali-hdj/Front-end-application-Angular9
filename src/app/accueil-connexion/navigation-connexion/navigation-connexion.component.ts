@@ -22,4 +22,9 @@ export class NavigationConnexionComponent implements OnInit {
   {
     return this.connexion.isConnected();
   }
+
+  isWaiting()
+  {
+    return this.connexion.isWaitingSomting;
+  }
 }

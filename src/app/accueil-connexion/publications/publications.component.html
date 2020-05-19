@@ -4,7 +4,7 @@
             <form ngSubmit="onSubmit()" #f="ngForm">
        <textarea class="form-control" style="margin: 10px;" name="post" ngModel required minlength="20" id="exampleFormControlTextarea1" rows="5"></textarea>
        <button [disabled]="f.invalid" type="submit" class="btn btn-success" style="position: relative;left: 85%;"> Publier</button>
-      <strong *ngIf="f.value['post'].length>0&&f.value['post'].length<20" style="color: red;">minumum 20 caracteres </strong>
+      <strong *ngIf="f.value['post']!=null?f.value['post'].length>0&&f.value['post'].length<20:false" style="color: red;">minumum 20 caracteres </strong>
     </form>
   </div>
      <app-post *ngFor="let p of posts" [post]="p"></app-post>

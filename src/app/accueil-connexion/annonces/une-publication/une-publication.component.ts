@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { connexionService } from 'src/app/services/service.connexion';
 
 @Component({
   selector: 'app-une-publication',
@@ -9,9 +10,14 @@ export class UnePublicationComponent implements OnInit {
 
   @Input() publication;
 
-  constructor() { }
+  constructor(private connexion:connexionService) { }
 
   ngOnInit(): void {
   }
 
+  onSupprimer()
+  {
+
+    this.connexion.supprimerAnnonce(this.publication.id)
+  }
 }

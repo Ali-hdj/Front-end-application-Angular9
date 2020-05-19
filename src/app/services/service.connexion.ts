@@ -17,14 +17,20 @@ export class connexionService
         code_postale :29200
     }
 
-
+    isWaitingSomting =false ;
     areReady=[true,false,false,false,false,false,false];
 
     isReady(id)
     {
         return this.areReady[id];
     }
+/************************************Actions********************** */
 
+supprimerAnnonce(id)
+{
+    this.isWaitingSomting=true;
+    setTimeout(()=>{this.annonces.splice(id,id);this.isWaitingSomting=false},500)
+}
 
     /***************************profile************** */
     getProfile()
@@ -160,21 +166,22 @@ setTimeout(()=>this.areReady[6]=true,2000);
 /*************************************************Mes ANNONCES************************************ */
 
 annonces=[
-    {
+    {   
+        id :0,
         nom :"salim",
         titre :"location d'une perceuse",
         date :"12-10-2020",
         prix : 200,
         contenu :"voila mon nom est ali je loue des appareils electroniques avec un tarif resonable"
     },
-    {
+    {    id :1,
         nom :"salim",
         titre :"location d'une perceuse",
         date :"12-10-2020",
         prix : 200,
         contenu :"voila mon nom est ali je loue des appareils electroniques avec un tarif resonable"
     },
-    {
+    {    id :2,
         nom :"salim",
         titre :"location d'une perceuse",
         date :"12-10-2020",
@@ -188,14 +195,18 @@ getPublication()
     setTimeout(
     
     ()=>{
-     let feed = {nom :"salim",
+    
+     let feed = {
+        id :this.annonces!==null?this.annonces.length:0,
+         nom :"salim",
      titre :"location d\'une perceuse",
       date :"12-10-2020",
       prix : 200,
      contenu :"voila mon nom est ali je loue des appareils electroniques avec un tarif resonable"
+  
     };   
     this.annonces.push(feed);
-     this.areReady[4]=true},
+this.areReady[4]=true},
     3000
     )
 }
