@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { connexionService } from 'src/app/services/service.connexion';
 
 @Component({
   selector: 'app-navigation-menu-gauche',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class NavigationMenuGaucheComponent implements OnInit {
 
-  constructor() { }
+  constructor(private connexion:connexionService) { }
 
   @Input() affichages;
 
@@ -21,7 +22,10 @@ export class NavigationMenuGaucheComponent implements OnInit {
     this.affichages[onglet]=true;
   }
 
-
+deconnexion()
+{
+  this.connexion.seDeconecter();
+}
 
   ngOnInit(): void {
   }

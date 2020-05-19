@@ -43,7 +43,7 @@ supprimerAnnonce(id)
     getProfile()
     {
         this.areReady[1]=false;
-setTimeout(()=>this.areReady[1]=true,2000);
+setTimeout(()=>this.areReady[1]=true,300);
     }
 /*******************************************MESSAGES************************* */
     messagerie=[
@@ -72,7 +72,7 @@ setTimeout(()=>this.areReady[1]=true,2000);
 getMessages()
 {
     this.areReady[2]=false;
-    setTimeout(()=>this.areReady[2]=true,2000);
+    setTimeout(()=>this.areReady[2]=true,300);
 }
 
 /*********************************************RENDEZ VOUS ********************************** */
@@ -104,7 +104,7 @@ rendez_vous=[
 getRendez_vous()
 {
     this.areReady[3]=false;
-    setTimeout(()=>this.areReady[3]=true,2000);
+    setTimeout(()=>this.areReady[3]=true,300);
 }
 /************************************************VOISINS*********************************** */
 
@@ -132,7 +132,7 @@ voisins=[
 getVoisins()
 {
     this.areReady[5]=false;
-setTimeout(()=>this.areReady[5]=true,2000);
+setTimeout(()=>this.areReady[5]=true,300);
 }
 
 /*************************************************CONTRATS************************************ */
@@ -166,7 +166,7 @@ contrats=[
 getContrats()
 {
 this.areReady[6]=false;
-setTimeout(()=>this.areReady[6]=true,2000);
+setTimeout(()=>this.areReady[6]=true,300);
 }
 
 
@@ -214,7 +214,7 @@ getPublication()
     };   
     this.annonces.push(feed);
 this.areReady[4]=true},
-    3000
+    500
     )
 }
 /************************************************************ */
