@@ -66,7 +66,8 @@ import { UnePublicationComponent } from './accueil-connexion/annonces/une-public
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    
    
   ],
   providers: [
