@@ -12,7 +12,7 @@ export class MessageComponent implements OnInit {
 
   @Input() message;
 
-
+  active=true;
   repondre=false;
   ngOnInit(): void {
   }
@@ -25,6 +25,13 @@ export class MessageComponent implements OnInit {
   onAnnuler()
   {
     this.repondre=false;
+    this.active=true;
+  }
+
+  onSupprimer()
+  {
+    this.active=false;
+
   }
 
 }

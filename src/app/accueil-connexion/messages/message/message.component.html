@@ -1,4 +1,6 @@
 <div class="shadow p-3 mb-5 bg-white rounded">
+
+<div *ngIf="active">
     <svg class="bi bi-envelope-open" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M.243 6.929l.514-.858L8 10.417l7.243-4.346.514.858L8 11.583.243 6.93z" clip-rule="evenodd"/>
         <path fill-rule="evenodd" d="M7.184 10.68L.752 14.432l-.504-.864L6.68 9.816l.504.864zm1.632 0l6.432 3.752.504-.864L9.32 9.816l-.504.864z" clip-rule="evenodd"/>
@@ -11,15 +13,46 @@ recu le {{this.message.date}}
 {{this.message.message}}
 
 <div style="position:relative;left:70%;" *ngIf="!repondre">
-    <button class="btn btn-success" style="margin:5px;" (click)="onRepondre()">repondre </button>
-    <button class="btn btn-warning" style="margin:5px;">supprimer </button>
+    <button class="btn btn-success" style="margin:5px;" (click)="onRepondre()">Repondre
+        <svg class="bi bi-reply-all" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8.002 5.013a.144.144 0 00-.202.134V6.3a.5.5 0 01-.5.5c-.667 0-2.013.005-3.3.822-.984.624-1.99 1.76-2.595 3.876C2.425 10.515 3.59 9.982 4.61 9.7a8.741 8.741 0 011.921-.306 7.403 7.403 0 01.798.008h.013l.005.001h.001L7.3 9.9l.05-.498a.5.5 0 01.45.498v1.153c0 .108.11.176.202.134l3.984-2.933a.494.494 0 01.042-.028.147.147 0 000-.252.494.494 0 01-.042-.028L8.002 5.013zM6.8 10.386a7.745 7.745 0 00-1.923.277c-1.326.368-2.896 1.201-3.94 3.08a.5.5 0 01-.933-.305c.464-3.71 1.886-5.662 3.46-6.66 1.245-.79 2.527-.942 3.336-.971v-.66a1.144 1.144 0 011.767-.96l3.994 2.94a1.147 1.147 0 010 1.946l-3.994 2.94a1.144 1.144 0 01-1.767-.96v-.667z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M10.868 4.293a.5.5 0 01.7-.106l3.993 2.94a1.147 1.147 0 010 1.946l-3.994 2.94a.5.5 0 01-.593-.805l4.012-2.954a.493.493 0 01.042-.028.147.147 0 000-.252.496.496 0 01-.042-.028l-4.012-2.954a.5.5 0 01-.106-.699z" clip-rule="evenodd"/>
+          </svg>
+    </button>
+    <button class="btn btn-warning" style="margin:5px;" (click)="onSupprimer()">Supprimer
+        <svg class="bi bi-trash" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
+            <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
+          </svg>
+    </button>
 </div>
 <div style="width: 90%; margin: 10px;" *ngIf="repondre">
     <textarea typr="textarea" class="form-control" rows="3"></textarea>
     <div style="position:relative;left:75%;" *ngIf="repondre">
-        <button class="btn btn-success" style="margin:5px;" (click)="onRepondre()">repondre </button>
-        <button class="btn btn-warning" style="margin:5px;" (click)="onAnnuler()">annuler </button>
+        <button class="btn btn-success" style="margin:5px;" (click)="onRepondre()">Repondre 
+            <svg class="bi bi-reply-all" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8.002 5.013a.144.144 0 00-.202.134V6.3a.5.5 0 01-.5.5c-.667 0-2.013.005-3.3.822-.984.624-1.99 1.76-2.595 3.876C2.425 10.515 3.59 9.982 4.61 9.7a8.741 8.741 0 011.921-.306 7.403 7.403 0 01.798.008h.013l.005.001h.001L7.3 9.9l.05-.498a.5.5 0 01.45.498v1.153c0 .108.11.176.202.134l3.984-2.933a.494.494 0 01.042-.028.147.147 0 000-.252.494.494 0 01-.042-.028L8.002 5.013zM6.8 10.386a7.745 7.745 0 00-1.923.277c-1.326.368-2.896 1.201-3.94 3.08a.5.5 0 01-.933-.305c.464-3.71 1.886-5.662 3.46-6.66 1.245-.79 2.527-.942 3.336-.971v-.66a1.144 1.144 0 011.767-.96l3.994 2.94a1.147 1.147 0 010 1.946l-3.994 2.94a1.144 1.144 0 01-1.767-.96v-.667z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd" d="M10.868 4.293a.5.5 0 01.7-.106l3.993 2.94a1.147 1.147 0 010 1.946l-3.994 2.94a.5.5 0 01-.593-.805l4.012-2.954a.493.493 0 01.042-.028.147.147 0 000-.252.496.496 0 01-.042-.028l-4.012-2.954a.5.5 0 01-.106-.699z" clip-rule="evenodd"/>
+              </svg>
+        </button>
+        <button class="btn btn-warning" style="margin:5px;" (click)="onAnnuler()">Annuler </button>
     </div>
 </div>
 </strong>
+</div>
+<div *ngIf="!active">
+
+<img src="/../../../assets/images/warning.png">
+
+<br>
+<strong> Etes vous sur de supprimer ce message ? <br>
+cette operation est irréversible !!!
+</strong>
+<div style="position:relative;left:75%;">
+    <button class="btn btn-danger" style="margin:5px;" (click)="onSupprimer()">Supprimer 
+        
+    </button>
+    <button class="btn btn-warning" style="margin:5px;" (click)="onAnnuler()">Annuler </button>
+</div>
+</div>
 </div>
