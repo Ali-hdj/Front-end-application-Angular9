@@ -27,4 +27,9 @@ export class NavigationConnexionComponent implements OnInit {
   {
     return this.connexion.isWaitingSomting;
   }
+
+  isSuccess()
+  {
+    return this.connexion.isSuccess;
+  }
 }

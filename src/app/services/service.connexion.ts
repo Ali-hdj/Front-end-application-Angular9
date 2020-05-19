@@ -20,6 +20,8 @@ export class connexionService
     isWaitingSomting =false ;
     areReady=[true,false,false,false,false,false,false];
 
+    isSuccess=false;
+
     isReady(id)
     {
         return this.areReady[id];
@@ -29,7 +31,12 @@ export class connexionService
 supprimerAnnonce(id)
 {
     this.isWaitingSomting=true;
-    setTimeout(()=>{this.annonces.splice(id,id);this.isWaitingSomting=false},500)
+    setTimeout(()=>{
+        this.annonces=this.annonces.filter(x=>x.id!=id);this.isWaitingSomting=false;
+        this.isSuccess=true;
+        setTimeout(()=>this.isSuccess=false,1000);
+    
+    },200)
 }
 
     /***************************profile************** */

@@ -11,7 +11,20 @@ export class MessageComponent implements OnInit {
   constructor(private connexion :connexionService) { }
 
   @Input() message;
+
+
+  repondre=false;
   ngOnInit(): void {
+  }
+
+  onRepondre()
+  {
+    this.repondre=true;
+  }
+
+  onAnnuler()
+  {
+    this.repondre=false;
   }
 
 }
