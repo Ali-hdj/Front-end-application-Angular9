@@ -255,4 +255,16 @@ addPublication(newPub)
     {
         return this.wait;
     }
+
+
+    /****************************sinscrir*************** */
+
+    creerCompte(inscription)
+    {
+        
+        this.httpclient.post(this.base_url+'/add/compte_complet/',inscription).subscribe(
+            (res)=>{alert('creation compte reussi')},
+            (erreur)=>{alert('echec de la creation du compte')});
+        return;
+    }
 }

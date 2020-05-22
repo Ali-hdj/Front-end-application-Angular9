@@ -25,7 +25,7 @@
 <div style="display:flex; margin-top: 50px;">
 <img src="/../assets/images/bricoleur.png" class="d-inline bricoleur">
 <div class="posts" class="d-inline">
-    <app-post *ngFor="let p of posts" [post]="p">
+    <app-post *ngFor="let p of posts |async" [post]="p">
     </app-post>
 </div>
 </div>
