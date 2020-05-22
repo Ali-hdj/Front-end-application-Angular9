@@ -27,7 +27,11 @@ return this.connexion.wait;
  
 onSubmit(form:NgForm)
 {
-  this.connexion.seConnecter();
+  var connexionInfo={
+    email :form.value['email'],
+    mot_de_passe:form.value['motdepasse']
+  }
+  this.connexion.seConnecter(connexionInfo);
 
 }
 }

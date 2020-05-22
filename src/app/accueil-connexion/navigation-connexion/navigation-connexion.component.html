@@ -17,6 +17,9 @@
           <a class="nav-link" routerLink="../tout-les-publications" routerLinkActive="Active">voir toutes les demandes </a>
         </li>
       </ul>
+      <div *ngIf="isSuccess()" class="alert alert-success" role="alert" >
+       operation executé avec succé
+       </div>
       <img src="/../../assets/images/loding.gif" *ngIf="isWaiting()" style="margin: 50px; margin-top: 0px;margin-bottom: 0px;">
       <img src="/../../assets/images/success.png" *ngIf="isSuccess()" style="margin: 50px; margin-top: 0px;margin-bottom: 0px;">
       <form class="form-inline my-1 my-lg-0" *ngIf="isConnected()">

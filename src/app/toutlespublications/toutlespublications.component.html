@@ -2,7 +2,7 @@
 <div style="width: 100%; background: gray; ">
 <div style="margin-left:50px;margin-right:20px;display:flex; flex-wrap: wrap; width: 100%;padding: 50px;">
 
-    <app-post *ngFor="let p of posts" [post]="p"  style="margin: 20px;" ></app-post>
-    
+    <app-post *ngFor="let p of  this.monServiceUtilisateur.getPosts() | async" [post]="p"  style="margin: 20px;" ></app-post>
+
 </div>
 </div>

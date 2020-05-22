@@ -1,12 +1,13 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 
 export class connexionService
 {
    
-    constructor(private route :Router)
+    constructor(private route :Router,private httpclient : HttpClient)
     {
         
     }
@@ -17,6 +18,8 @@ export class connexionService
         code_postale :29200
     }
 
+    base_url='http://localhost:3000';
+
     isWaitingSomting =false ;
     areReady=[true,false,false,false,false,false,false];
 
@@ -25,6 +28,12 @@ export class connexionService
     isReady(id)
     {
         return this.areReady[id];
+    }
+
+    success()
+    {
+        this.isSuccess=true;
+        setTimeout(()=>this.isSuccess=false,2500);
     }
 /************************************Actions********************** */
 
@@ -72,6 +81,7 @@ setTimeout(()=>this.areReady[1]=true,300);
 getMessages()
 {
     this.areReady[2]=false;
+    
     setTimeout(()=>this.areReady[2]=true,300);
 }
 
@@ -199,36 +209,34 @@ annonces=[
 getPublication()
 {  
      this.areReady[4]=false;
-    setTimeout(
-    
-    ()=>{
-    
-     let feed = {
-        id :this.annonces!==null?this.annonces.length:0,
-         nom :"salim",
-     titre :"location d\'une perceuse",
-      date :"12-10-2020",
-      prix : 200,
-     contenu :"voila mon nom est ali je loue des appareils electroniques avec un tarif resonable"
-  
-    };   
-    this.annonces.push(feed);
-this.areReady[4]=true},
-    500
-    )
+     this.httpclient.get(this.base_url+/annonces/).subscribe((pub :any[])=>
+     {if(pub){
+         this.annonces=pub;
+         this.areReady[4]=true;
+    }},
+     (err)=>console.log(err));
+
+     return this.annonces;
+}
+
+addPublication(newPub)
+{
+    this.httpclient.post(this.base_url+'/add/annonce/',newPub).subscribe((stat)=>{console.log(stat);this.success()},(err)=>{alert(err)});
+
 }
 /************************************************************ */
     template;
     connecte=true;
     wait=false;
-    seConnecter()
+    seConnecter(connexionInfo)
     {
        this. wait=true;
-        setTimeout(()=>{
-            this.connecte=true;
-            this.wait=false;
-            this.route.navigate(['accueil-utilisateur']);
-        },1000);
+       this.httpclient.post(this.base_url+'/connexion/',connexionInfo)
+       .subscribe((stat)=>{this.connecte=true;this.route.navigate(['accueil-utilisateur']);this.wait=false;}
+       ,(err)=>{alert('echec d\'autenfication');this.wait=false;});
+            
+            
+       
 
     }
 

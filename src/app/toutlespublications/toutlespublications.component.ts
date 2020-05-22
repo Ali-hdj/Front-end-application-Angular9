@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { utilisateurService } from '../services/service.utilisateur';
 import { connexionService } from '../services/service.connexion';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-toutlespublications',
@@ -8,15 +10,19 @@ import { connexionService } from '../services/service.connexion';
   styleUrls: ['./toutlespublications.component.scss']
 })
 export class ToutlespublicationsComponent implements OnInit {
-  posts;
 
-  constructor(private monServiceUtilisateur:utilisateurService,private conextionUtilisateur : connexionService) { }
+  
+
+  constructor(public monServiceUtilisateur:utilisateurService,private conextionUtilisateur : connexionService,private httpclient:HttpClient) { }
 
 
 navigation;
+base_url='http://localhost:3000';
+
+
 
   ngOnInit(): void {
-    this.posts=this.monServiceUtilisateur.getPosts();
+    
 
    
    this.navigation=this.conextionUtilisateur.template;

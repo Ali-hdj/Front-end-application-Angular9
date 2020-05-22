@@ -11,9 +11,10 @@ export class PublicationsComponent implements OnInit {
 
   constructor(private monServiceUtilisateur:utilisateurService,private conextionUtilisateur : connexionService) { }
 
-posts;
+
   ngOnInit(): void {
-    this.posts=this.monServiceUtilisateur.getPosts();
+
+    
   }
 
   isConnected()
@@ -23,6 +24,18 @@ posts;
 
   onSubmit(form:NgForm)
   {
+   let  annonce={ idcategorie :form.value['categorie'],
+                  prix :form.value['prix'],
+                  contenu :form.value['post']
+                }
+    
 
-  }
+            this.conextionUtilisateur.addPublication(annonce);
 }
+
+getPosts()
+{
+  return  this.monServiceUtilisateur.getPosts();
+}
+}
+ /**ngIf="f.value['post'].length>=20"  *ngIf="f.value['categorie']!=0*/

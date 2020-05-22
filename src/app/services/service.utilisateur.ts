@@ -1,14 +1,57 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { async } from '@angular/core/testing';
+import { Observable } from 'rxjs';
+import * as Rx from 'Rxjs/Rx';
+
+@Injectable()
 export class utilisateurService
 {
-   posts= [{utilisateur:"Ali",ville:"brest",prix:"120 €",contenu:"voila contenu de mon post je cherche un jeune devloppeur d'applications web pour me devlopper des sites internet alors moi j'habite a brest centre ville ....",image:"/../../assets/images/homme_user.png"},
-{note:5,utilisateur:"Ali",ville:"brest",prix:"120 €",contenu:"voila contenu de mon post",image:"/../assets/images/homme_user.png"},
-{note:4,utilisateur:"Ali",ville:"brest",prix:"120 €",contenu:"voila contenu de mon post",image:"/../assets/images/homme_user.png"},
-{note:1,utilisateur:"Ali",ville:"brest",prix:"120 €",contenu:"voila contenu de mon post",image:"/../assets/images/homme_user.png"},
-{note:3,utilisateur:"Ali",ville:"brest",prix:"120 €",contenu:"voila contenu de mon post",image:"/../assets/images/homme_user.png"}
-];
+
+
+base_url='http://localhost:3000'
+   posts :Promise<Object>;
+   
+constructor(private httpclient:HttpClient)
+{
+   this.posts = new Promise((resolve, reject) => {
+    
+      this.httpclient.get(this.base_url+/annonces/).subscribe((p)=>
+      {
+         resolve(p);
+      });
+    });
+
+    var source = Rx.Observable
+    .interval(1000 /* ms */)
+
+var subscription = source.subscribe(
+     (x)=>{
+      this.httpclient.get(this.base_url+/annonces/).subscribe((p)=>
+     {
+        this.posts=Promise.resolve(p);
+     })
+
+     console.log(this.posts)
+    },
+    function (err) {
+        console.log('Error: ' + err);   
+    },
+    function () {
+        console.log('Completed');   
+    });
+  
+    
+};
+
+
+
+
+
 
 getPosts()
 {
-    return this.posts;
+  
+    return this.posts ;
 }
 }
