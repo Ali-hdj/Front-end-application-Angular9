@@ -1,9 +1,19 @@
 <div class="publicationDiv">
 
-    <div *ngIf="this.connexion.isReady(2)">
-  <app-message  *ngFor="let m of messagerie()" [message]="m"></app-message>
+  <button class="btn btn-success" *ngIf="messageRecu" (click)="messageFlip()" >messages recu</button>
+  <button class="btn btn-success" *ngIf="!messageRecu"  (click)="messageFlip()" >messages envoyés</button>
+
+    <div *ngIf="this.connexion.isReady(2)&& messageRecu ">
+  <app-message  *ngFor="let m of messagerie() |async" [message]="m"></app-message>
     </div>
-    </div>
+   
     <div *ngIf="!this.connexion.isReady(2)" style="position: absolute;top: 200px;left:50%;">
       <img src="/../../../assets/images/loding.gif">
+    </div>
+      <div *ngIf="this.connexion.isReady(2)&& !messageRecu ">
+        <app-message  *ngFor="let m of messagerie() |async" [message]="m"></app-message>
+      </div>
+          </div>
+          <div *ngIf="!this.connexion.isReady(2)" style="position: absolute;top: 200px;left:50%;">
+            <img src="/../../../assets/images/loding.gif">
   </div>

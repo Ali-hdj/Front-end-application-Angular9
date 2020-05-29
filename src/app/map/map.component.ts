@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as L from 'leaflet';
+import { connexionService } from '../services/service.connexion';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-
-  constructor() { }
+ 
+  constructor(private connexion:connexionService) { }
   myIcon = L.icon({
     iconUrl: '/../../assets/images/pnj.png'
   });
   
-  att=50.6311634;
-  lat=3.0599573
+  att=this.connexion.att;
+  lat=this.connexion.long;
 marker;
  map;
+
   position()
   {
     this.att+=0.001;

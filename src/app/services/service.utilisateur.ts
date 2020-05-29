@@ -11,7 +11,7 @@ export class utilisateurService
 
 base_url='http://localhost:3000'
    posts :Promise<Object>;
-   
+   stop=false;
 constructor(private httpclient:HttpClient)
 {
    this.posts = new Promise((resolve, reject) => {
@@ -28,7 +28,8 @@ constructor(private httpclient:HttpClient)
 var subscription = source.subscribe(
      (x)=>{
       this.httpclient.get(this.base_url+/annonces/).subscribe((p)=>
-     {
+     {  
+         if(!this.stop)
         this.posts=Promise.resolve(p);
      })
 

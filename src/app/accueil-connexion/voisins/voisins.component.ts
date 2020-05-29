@@ -9,9 +9,9 @@ import { connexionService } from 'src/app/services/service.connexion';
 export class VoisinsComponent implements OnInit {
 
   constructor(public connexion:connexionService) { }
-
+voisins;
   ngOnInit(): void {
-    this.connexion.getVoisins();
+   this.voisins= this.connexion.getVoisins();
   }
 
 getVoisins()

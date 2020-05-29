@@ -27,7 +27,8 @@ onSubmit(form:NgForm)
     codepostale:form.value['codepostale'],
     rue:form.value['rue'],
     password:form.value['password'],
-    tel:form.value['tel']
+    tel:form.value['tel'],
+    ville:form.value['ville']
   }
 
   this.connexion.creerCompte(inscription);

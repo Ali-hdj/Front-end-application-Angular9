@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule,HTTP_INTERCEPTORS} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -31,7 +31,8 @@ import { UnRendezVousComponent } from './accueil-connexion/rendez-vous/un-rendez
 import { UnContratComponent } from './accueil-connexion/contrats/un-contrat/un-contrat.component';
 import { UnVoisinComponent } from './accueil-connexion/voisins/un-voisin/un-voisin.component';
 import { UnePublicationComponent } from './accueil-connexion/annonces/une-publication/une-publication.component';
-
+import { AuthInterceptor } from './interceptors/auth-interceptor';
+import { MapVoisinComponent } from './accueil-connexion/voisins/map-voisin/map-voisin.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { UnePublicationComponent } from './accueil-connexion/annonces/une-public
     UnRendezVousComponent,
     UnContratComponent,
     UnVoisinComponent,
-    UnePublicationComponent
+    UnePublicationComponent,
+    MapVoisinComponent
    
   ],
   imports: [
@@ -73,7 +75,8 @@ import { UnePublicationComponent } from './accueil-connexion/annonces/une-public
   ],
   providers: [
     connexionService,
-    utilisateurService
+    utilisateurService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
